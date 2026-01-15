@@ -1,0 +1,22 @@
+[project]
+name = "systematicreview-agridata"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "faiss-cpu",
+    "fitz",
+    "google-genai",
+    "ipykernel>=6.30.1",
+    "langchain",
+    "langchain-community",
+    "langchain-google-genai",
+    "notebook",
+    "openpyxl",
+    "pandas",
+    "pip",
+    "pypdf",
+    "python-dotenv",
+    "xlrd",
+]
