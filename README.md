@@ -30,8 +30,7 @@ automating-prisma/
 ## Getting Started
 
 ### Prerequisites
-
-- Python 3.10+
+- Python 3.11+
 - [uv](https://github.com/astral-sh/uv) (required for dependency management)
 - Google Gemini API Key
 
@@ -49,13 +48,15 @@ automating-prisma/
    ```
 
 3. Configure environment variables:
-   Create a `.env` file in the root directory with the following:
+   Create a local `.env` file in the root directory (do not commit secrets). Example contents:
    ```env
    GEMINI_API_KEY=your_api_key_here
-   MODEL=gemini-1.5-flash
-   MODEL_SUPERVISOR=gemini-1.5-pro
-   MODEL_EMBEDDING=text-embedding-004
+   MODEL=gemini-2.5-flash
+   MODEL_SUPERVISOR=gemini-2.5-pro
+   MODEL_EMBEDDING=models/text-embedding-004
    ```
+
+   Security note: Do not commit `.env` or other secret values to version control.
 
 ## Workflow
 
@@ -63,8 +64,9 @@ The framework follows a sequential pipeline reflecting the PRISMA flow:
 
 1. **Identification & Screening**: Run `01_identification_screening.ipynb`. This notebook processes bibliographic exports (CSV/XLS) from Scopus, IEEE, and WoS, then uses Gemini to filter papers based on their abstracts.
 2. **Eligibility (Full-Text)**: Use `03_eligibility_RAG.ipynb` for papers that passed the initial screening. It builds a local vector store from PDFs and uses RAG to assess eligibility against detailed criteria.
+   Note: Place your legally-obtained full-text PDFs in `data/full_text_pdf/` (create this folder if it does not exist) before running the eligibility notebook.
 3. **Evaluation & Harmonization**: Use `02_screening_evaluation.ipynb` to compare automated results against validation datasets and harmonize the final metadata for reporting.
-4. **End-to-End**: The `replicated_study_workflow.ipynb` provides a condensed version of the entire process for demonstration purposes.
+4. **End-to-End**: The `replicated_study_workflow.ipynb` provides a condensed version of the entire workflow for reproducing the reference study.
 
 ## License
 
