@@ -1,0 +1,146 @@
+,DOI,Include,Reason,Data Source
+0,10.1109/ACCESS.2024.3423462,yes,"The paper introduces a new dataset (MMW-AQA) for Action Quality Assessment, which is a computer science task involving video data.",MMW-AQA
+1,10.23919/EUSIPCO55093.2022.9909680,no,"The paper is about Audio Question Answering, not Human Action Quality Assessment, and does not primarily use vision-based methods for action quality.",
+2,10.1109/ICAACE61206.2024.10548995,yes,The paper proposes a method for Action Quality Assessment using video features and evaluates it on existing AQA datasets.,AQA-7;MTL-AQA
+3,10.1109/ITME53901.2021.00048,yes,The paper proposes a skeleton-based method for Action Quality Assessment using vision data and evaluates it on a specific dataset.,MIT-Skate
+4,10.1109/ICIP42928.2021.9506257,yes,The paper proposes a method for Action Quality Assessment using vision-based techniques and evaluates it on a diving dataset. The dataset name is not specified.,
+5,10.1109/ICASSP48485.2024.10447069,yes,The paper proposes a new framework for video-based Action Quality Assessment and evaluates it on an AQA dataset. The dataset name is not specified.,
+6,10.1109/ICMLC58545.2023.10327994,yes,"The paper applies Action Quality Assessment using human skeletal data to evaluate ASD behavior, utilizing publicly available autism datasets. The dataset name is not specified.",
+7,10.1109/CVPR52729.2023.00238,yes,The paper introduces a new video dataset (LOGO) for Group Action Quality Assessment and proposes a method for it.,LOGO
+8,10.1109/TIM.2024.3398072,yes,The paper introduces a new video dataset (AGF-Olympics) for Action Quality Assessment in floor gymnastics and proposes a method.,AGF-Olympics
+9,10.1109/ICIP.2018.8451364,yes,The paper proposes a new method for Action Quality Assessment and evaluates it on the UNLV-Dive dataset.,UNLV-Dive
+10,10.1109/TIP.2024.3362135,yes,The paper proposes a multimodal method for Action Quality Assessment using visual and audio information and evaluates it on public datasets. The dataset names are not specified.,
+11,10.1109/CVPR52688.2022.00296,yes,The paper introduces a new video dataset (FineDiving) for Action Quality Assessment and proposes a procedure-aware approach.,FineDiving
+12,10.1109/WACV57701.2024.00012,yes,"The paper proposes a framework for Action Quality Assessment and evaluates it on multiple benchmark datasets, including a newly introduced one (PD4T).",JIGSAWS;MTL-AQA;FineDiving;PD4T
+13,10.1109/TCSVT.2022.3143549,yes,The paper proposes a semi-supervised framework for Action Quality Assessment and evaluates it on existing datasets.,MTL-AQA;Rhythmic Gymnastics
+14,10.1109/INSAI54028.2021.00029,no,The article is a survey of video-based Action Quality Assessment.,
+15,10.1109/ICASSP48485.2024.10448158,yes,"The paper introduces a new dataset (TAQR) for teacher action quality assessment, which is a vision-based AQA task, and provides open access to it.",TAQR
+16,10.1109/TCSVT.2023.3281413,yes,The paper proposes a hierarchical GCN for vision-based AQA and evaluates it on multiple public AQA datasets.,AQA-7;MTL-AQA;JIGSAWS
+17,10.1109/TIP.2023.3331212,yes,The paper proposes a network for vision-based AQA and evaluates it on multiple public AQA datasets.,FineDiving;AQA-7;MTL-AQA
+18,10.1109/COMPSAC.2015.156,no,The paper is not related to Human Action Quality Assessment (AQA) and does not use vision-based methods.,
+19,10.1109/MMSP55362.2022.9949464,yes,The paper proposes a system for Tai Chi AQA using vision-based methods and introduces a new dataset (TaiChi-24).,TaiChi-24
+20,10.1109/WACV.2019.00161,yes,"The paper uses a newly released AQA dataset for vision-based action quality assessment, but the dataset name is generic.",
+21,10.1109/CVPR42600.2020.00986,yes,"The paper proposes a method for vision-based AQA and evaluates it on public AQA datasets (AQA-7, MTL-AQA).",AQA-7;MTL-AQA
+22,10.1109/ICCV48922.2021.00782,yes,"The paper proposes a method for vision-based AQA and evaluates it on public AQA datasets (AQA-7, MTL-AQA, JIGSAWS).",AQA-7;MTL-AQA;JIGSAWS
+23,10.1109/ICCT.2015.7399879,yes,"The paper proposes a vision-based system for human action quality assessment using a Kinect sensor and a pre-collected action library, but the dataset name is generic.",
+24,10.23919/EUSIPCO58844.2023.10289751,no,"The paper is about Audio Question Answering (AQA), not Human Action Quality Assessment (AQA), and does not use vision-based methods.",
+25,10.1109/EIECC60864.2023.10456639,yes,The paper proposes an algorithm for vision-based action quality assessment in medical clinical skills and evaluates it on public and self-made datasets.,Thumos14;ActivityNet1.3
+26,10.1109/CVPR.2019.00039,yes,The paper proposes a multitask learning approach for vision-based AQA and introduces a new dataset (multitask-AQA dataset).,Multitask-AQA
+27,10.1109/TC.2024.3398503,no,"The paper is about an adaptive post-training quantization method for CNNs, not Human Action Quality Assessment (AQA), and is not directly related to vision-based human action analysis.",
+28,10.1109/CVPR52688.2022.00323,yes,"The paper proposes a model for vision-based AQA and uses datasets for evaluation, although their names are not specified in the abstract.",
+29,10.1109/ACCESS.2022.3198935,no,The article is a literature review.,
+30,10.1109/TVCG.2023.3326524,yes,"The paper describes a visual analytics system for player action evaluation in soccer using a real-world dataset, which aligns with Human Action Quality Assessment (AQA) and computer science, and uses vision-based methods.",
+31,10.1109/TNSRE.2023.3317411,yes,The paper proposes a contrastive learning framework for Action Quality Assessment (AQA) of physical rehabilitation exercises using skeleton sequences and explicitly mentions the UI-PRMD and KIMORE datasets.,UI-PRMD;KIMORE
+32,10.1109/TNNLS.2022.3151787,no,"The paper focuses on Aesthetic Quality Assessment (AQA) of photographs, not Human Action Quality Assessment.",
+33,10.1109/MMSP59012.2023.10337711,yes,"The paper proposes a deep learning model for patient action assessment using 3D skeletons and the UI-PRMD dataset, which is a form of Human Action Quality Assessment (AQA) and uses vision-based methods.",UI-PRMD
+34,10.1109/ACCESS.2023.3305372,yes,"The paper proposes a contrastive learning framework for fine-grained action assessment using graph convolutional networks, which is related to Human Action Quality Assessment (AQA) and vision-based methods (body joints).",
+35,10.1109/TVCG.2023.3247092,yes,"The paper proposes a video-based augmented reality system for muscle strength assessment using an AQA algorithm trained on a JDM dataset and a 3D animation dataset, aligning with Human Action Quality Assessment (AQA) and vision-based methods.",JDM;3D Animation
+36,10.1109/TPAMI.2022.3194311,no,"The paper focuses on Acoustic Question Answering (AQA), which is not related to Human Action Quality Assessment or vision-based methods.",
+37,10.1109/TSC.2020.2997737,no,"The paper focuses on quality assessment in online review systems, which is not related to Human Action Quality Assessment or vision-based methods.",
+38,10.1109/ISCAS58744.2024.10558180,no,"The paper focuses on Speech Quality Assessment (AQA), which is not related to Human Action Quality Assessment or vision-based methods.",
+39,10.1109/ICIP46576.2022.9897932,yes,"The paper proposes a neural network for neurosurgical skills evaluation using video data and explicitly mentions the JIGSAWS and NETS datasets, which aligns with Human Action Quality Assessment (AQA) and vision-based methods.",JIGSAWS;NETS
+40,10.1109/LRA.2022.3192770,no,"The paper focuses on autonomous racing using LiDAR and IMU data, which is not related to Human Action Quality Assessment or primarily vision-based methods for human actions.",
+41,10.1109/MMSP53017.2021.9733638,yes,"The paper introduces a multimodal dataset and baselines for automated piano skills assessment, which is a form of Human Action Quality Assessment (AQA) using visual analysis.",PISA
+42,10.1109/ISCAS48785.2022.9937262,yes,"The paper proposes a skeleton-based network for real-time action evaluation in rehabilitation therapy, using a custom dataset (RDSD) and vision-based methods, which is a form of Human Action Quality Assessment (AQA).",RDSD
+43,10.1109/JSEN.2021.3051497,no,"The paper focuses on 3D action recognition, which aims to identify 'what' action is performed, not 'how well' it is performed (Action Quality Assessment).",
+44,10.1109/TMM.2022.3222681,yes,"The paper proposes a vision-based framework for estimating CoP metrics for balance control evaluation using a monocular RGB camera and a novel multi-view body landmark dataset, which is a form of Human Action Quality Assessment (AQA).",Multi-view Body Landmark;Existing balance
+45,10.1109/EMBC.2014.6944693,no,The article is not related to vision-based methods or Human Action Quality Assessment (AQA). It focuses on drug chemosensitivity prediction using gene and miRNA expressions.,
+46,10.1109/TMM.2023.3328180,yes,"The paper proposes a method for scoring figure skating videos, which is a vision-based Human Action Quality Assessment (AQA) task, and introduces a new dataset.",OlympicFS
+47,10.1109/TransAI49837.2020.00030,yes,"The paper proposes a vision-based method using skeleton data for human action abnormality detection, which is a form of Human Action Quality Assessment (AQA), and evaluates it on a public dataset.",UI-PRMD
+48,10.1109/CVPRW.2017.16,yes,"The paper presents frameworks for estimating action quality in Olympic sports using vision-based methods (3D CNNs), directly addressing Human Action Quality Assessment (AQA).",
+49,10.1109/ACCESS.2023.3316009,yes,"The paper proposes an AI trainer for squat analysis and correction using computer vision (MediaPipe), which is a Human Action Quality Assessment (AQA) task, and uses a custom dataset.",
+50,10.1109/TNNLS.2023.3244024,no,The article is not related to vision-based methods or Human Action Quality Assessment (AQA). It focuses on improving reinforcement learning for general optimization problems.,
+51,10.1109/TASLP.2020.3010650,no,The article is not related to vision-based methods or Human Action Quality Assessment (AQA). It focuses on Audio Question Answering (AQA) and temporal reasoning in audio.,
+52,10.1109/CVPR52729.2023.00231,no,"The paper focuses on synthesizing co-speech gestures for virtual characters, not on assessing the quality of human actions.",
+53,10.1109/ICMEW46912.2020.9106049,yes,"The paper proposes an action evaluation method for fitness actions using vision-based skeleton information, which is a Human Action Quality Assessment (AQA) task, and builds a new dataset.",
+54,10.1109/ICACCCN.2018.8748662,no,The article is not related to vision-based methods or Human Action Quality Assessment (AQA). It focuses on Parkinson's disease determination using speech signals.,
+55,10.1109/WACV48630.2021.00044,yes,"The paper proposes a method for measuring the quality of sports actions, including figure skating, using vision-based techniques (pose estimation), which is a Human Action Quality Assessment (AQA) task, and introduces a new dataset.",
+56,10.1109/TMM.2023.3294800,yes,"The paper addresses 'skill determination' which aims to evaluate how well a participant performs a specific action, directly aligning with Human Action Quality Assessment (AQA), and evaluates on public datasets.",
+57,10.1109/VCIP53242.2021.9675430,no,The article is not related to Human Action Quality Assessment (AQA); it focuses on the aesthetic quality assessment of mobile game images.,
+58,10.1109/ICME52920.2022.9859756,no,"The paper focuses on temporal action detection, which aims to locate and classify action segments, not to assess the quality of human actions (AQA).",
+59,10.1016/j.compbiomed.2024.108382,yes,"The paper proposes a system for automatic physical rehabilitation exercise assessment using vision-based skeleton data, which is a Human Action Quality Assessment (AQA) task, and evaluates it on public datasets.",UI-PRMD;KIMORE
+60,10.1016/j.ins.2024.120347,yes,"The paper explicitly focuses on Action Quality Assessment (AQA), a vision task, and uses multiple AQA datasets.",MTL-AQA;FineDiving;AQA-7;JIGSAWS
+61,10.1007/s10844-023-00824-x,no,"The article is about recommender systems, which is not related to Human Action Quality Assessment (AQA) or vision-based methods for human action analysis.",
+62,10.1007/s10489-024-05349-6,yes,"The paper explicitly focuses on Action Quality Assessment (AQA), a video understanding task, and uses AQA datasets.",UNLV-Dive;AQA-7
+63,10.1109/WACV57701.2024.00641,no,"The article focuses on egocentric action recognition, which is not Human Action Quality Assessment (AQA).",
+64,10.1109/CVPR52733.2024.01386,yes,"The paper explicitly focuses on Human-centric Action Quality Assessment (AQA), a vision task, and uses/produces datasets.",FineDiving;FineDiving-HM
+65,10.1109/CVPR52733.2024.01744,no,"The article introduces 'narrative action evaluation (NAE)' which is explicitly stated as 'Unlike traditional tasks such as score-based action quality assessment', thus not directly Human Action Quality Assessment (AQA).",
+66,10.1109/IMSA61967.2024.10652824,no,"The article is about Arabic Question Answering (QA), which is not related to Human Action Quality Assessment (AQA) or vision-based methods.",
+67,10.1109/CBMS61543.2024.00016,yes,"The paper explicitly focuses on action quality assessment, a vision task using pose estimation, and uses the Fitness-AQA dataset.",Fitness-AQA
+68,10.1109/CVPRW63382.2024.00324,yes,"The paper introduces a new multi-modality dataset for rehabilitation movement analysis, which involves assessing movement quality using vision-based methods (Kinect cameras). This aligns with the broader definition of AQA.",FineRehab
+69,10.1007/978-3-031-61678-5_6,yes,"The paper proposes a sport action evaluation approach based on human pose estimation, which is a vision-based method for Human Action Quality Assessment (AQA), and creates a dataset.",
+70,10.1109/TPAMI.2024.3378753,yes,"The paper focuses on skeleton-based rehabilitation exercise assessment, which involves evaluating the quality of exercises, aligning with Human Action Quality Assessment (AQA), and uses multiple datasets.",UI-PRMD;KIMORE;EHE
+71,10.1109/ICCR64365.2024.10927573,no,"The article focuses on human activity classification, which is not Human Action Quality Assessment (AQA).",
+72,10.1007/s10489-023-05166-3,yes,"The paper explicitly focuses on Action Quality Assessment (AQA), a computer vision task, and uses the FineDiving dataset.",FineDiving
+73,10.1145/3606038.3616150,yes,"The paper focuses on video-based skill assessment in sports, which is a form of Human Action Quality Assessment (AQA), and uses a database of video recordings.",
+74,10.1145/3581783.3613795,yes,"The paper explicitly focuses on Action Quality Assessment (AQA), a vision task, and collects/releases a new dataset for it.",FineFS
+75,10.1145/3581783.3613774,yes,The paper proposes a new dataset (RFSJ) for Action Quality Assessment using vision-based methods.,RFSJ
+76,10.1145/3650400.3650642,yes,"The paper proposes an AI-based scoring system for martial arts and collected a dataset for it, which is a form of Action Quality Assessment.",
+77,10.1145/3577190.3614117,yes,The paper introduces a multimodal dataset (MMASD) that includes vision-based data and explicitly states it can be used for Action Quality Assessment.,MMASD
+78,10.3390/app132011527,no,"The paper is about UAV anti-submarine search and path planning, not Human Action Quality Assessment, and not primarily vision-based for human actions.",
+79,10.1007/s10489-023-04613-5,yes,The paper proposes a method for Action Quality Assessment using multi-skeleton structures and evaluates it on benchmark datasets.,MIT-Skate;Rhythmic Gymnastics
+80,10.1016/j.cviu.2023.103763,no,"The paper focuses on ""action anticipation"" rather than ""Action Quality Assessment"".",
+81,10.1145/3622896.3622916,yes,The paper proposes a multi-stage method for Action Quality Assessment and validates it using the FineDiving dataset.,FineDiving
+82,10.1609/aaai.v37i3.25485,no,"The paper focuses on ""Image Aesthetic Quality Assessment"" and ""Image Aesthetic Captioning"", not Human Action Quality Assessment.",
+83,10.1016/j.conengprac.2023.105456,no,"The paper is about privacy protection for mobile app users based on location data, not Human Action Quality Assessment or vision-based methods for human actions.",
+84,10.1007/s10489-022-03984-5,yes,"The paper proposes a method for Action Quality Assessment in sporting events, addressing the lack of substage quality labels in existing datasets.",
+85,10.1007/s40747-022-00892-6,yes,The paper proposes a method for Action Quality Assessment and evaluates it on the AQA-7 and MTL–AQA datasets.,AQA-7;MTL-AQA
+86,10.26555/ijain.v9i1.919,yes,The paper introduces a new dataset of ranked TikTok dance videos and a pairwise method for Action Quality Assessment.,Ranked TikTok Dance Video
+87,10.1007/s11263-022-01695-5,yes,"The paper proposes a framework for interactive Action Assessment, introduces two new datasets (TASD-2, PaSk), and evaluates on JIGSAWS and AQA-7 datasets.",JIGSAWS;TASD-2;PaSk;AQA-7
+88,10.18653/v1/2023.emnlp-main.645,no,"The paper focuses on ""Argument Post Quality Assessment"" using natural language, which is not Human Action Quality Assessment and not vision-based.",
+89,10.1007/978-3-031-43996-4_15,no,"The paper focuses on Automated Quality Assessment in Transoesophageal Echocardiography (medical imaging), not Human Action Quality Assessment.",
+90,10.1007/978-3-031-44216-2_19,yes,"The paper uses vision-based methods (3D skeleton data) for action assessment in physical rehabilitation, which is a form of AQA. It explicitly uses UI-PRMD and IntelliRehabDS datasets.",UI-PRMD;IntelliRehabDS
+91,10.21437/Interspeech.2023-1816,no,"The paper is about Audio Question Answering (AQA), which is not Human Action Quality Assessment (AQA) and is not vision-based.",
+92,10.1117/12.2685368,yes,The paper proposes a vision-based method for Human Action Quality Assessment (AQA) and evaluates it on AQA-7 and JIGSAWS datasets.,AQA-7;JIGSAWS
+93,10.1155/2023/3649217,yes,The paper proposes a vision-based method for Human Action Quality Assessment (AQA) for pull-ups and creates a new dataset for this purpose.,Pull-ups
+94,10.3390/systems11010021,yes,The paper proposes a vision-based method for Human Action Quality Assessment (AQA) in figure skating and evaluates it on Fis-V and MIT-Skate datasets.,Fis-V;MIT-Skate
+95,10.15302/J-QB-022-0291,no,"The paper focuses on action recognition for cows, not Human Action Quality Assessment (AQA).",
+96,10.1016/j.jvcir.2022.103625,yes,The paper proposes a vision-based method (skeleton-based deep pose feature learning) for Human Action Quality Assessment (AQA) in figure skating and evaluates it on MIT-skate and FIS-V datasets.,MIT-Skate;FIS-V
+97,10.3390/electronics11193051,yes,"The paper proposes a method to improve Action Quality Assessment (AQA) and evaluates it using the KTH datasets, which are commonly used for human action recognition/assessment.",KTH
+98,10.1007/s13042-022-01581-z,no,"The paper focuses on streamer temporal action detection, which is action recognition/detection, not Human Action Quality Assessment (AQA).",
+99,10.1016/j.patrec.2022.04.015,yes,The paper proposes a vision-based method for Human Action Quality Assessment (AQA) and evaluates it on the MTL-AQA dataset.,MTL-AQA
+100,10.1002/int.22701,no,"The paper is about automated solution suggestion for support tickets, which is not related to vision-based methods or Human Action Quality Assessment (AQA).",
+101,10.1007/978-3-031-24386-8_13,no,"The paper focuses on head pose estimation, not Human Action Quality Assessment (AQA).",
+102,10.1007/978-3-031-18913-5_17,yes,The paper proposes a skeleton-based method for Human Action Quality Assessment (AQA) to evaluate skill levels and uses UMONS-TAICHI and walking gait datasets.,UMONS-TAICHI;Walking Gait
+103,10.1007/978-3-031-19772-7_25,yes,"The paper proposes a vision-based method for Human Action Quality Assessment (AQA) and mentions using 'three public AQA benchmarks'. Specific dataset names are not provided in the abstract, so the data_source field is left empty as per guidelines for generic descriptions.",
+104,10.1007/978-3-031-19772-7_27,yes,The paper proposes a vision-based method for Human Action Quality Assessment (AQA) in sports and evaluates it on AQA-7 and MTL-AQA datasets.,AQA-7;MTL-AQA
+105,10.1007/978-3-031-19839-7_7,yes,"The paper proposes a self-supervised approach for workout form assessment and introduces a new publicly available dataset, Fitness-AQA. It is related to computer vision and AQA.",Fitness-AQA
+106,10.1155/2022/9402195,yes,"The paper designs a system for professional sports competition adjudication using data analysis and action recognition algorithms, explicitly mentioning the use of several public datasets and the construction of a new motion assessment database. It is related to computer vision and AQA.",Northwestern-UCLA;MSRC-12;CAD-60
+107,10.1007/978-3-031-04881-4_46,yes,The paper focuses on improving Action Quality Assessment (AQA) using deep learning techniques and evaluates its method on the MTL-AQA dataset. It is related to computer vision and AQA.,MTL-AQA
+108,10.1016/j.patcog.2021.108095,yes,"The paper proposes a graph convolutional network for human action evaluation, including quality evaluation, and uses the UI-PRMD dataset and real exercise data from AD patients. It is related to computer vision (skeleton data) and AQA.",UI-PRMD
+109,10.1145/3462244.3479891,yes,"The paper proposes a deep learning method for movement synchrony estimation and action quality assessment in play therapy, using the Play Therapy 13 (PT13) dataset collected from video recordings. It is related to computer vision and AQA.",PT13
+110,10.1145/3474085.3475438,yes,"The paper proposes a Tube Self-Attention Network for Action Quality Assessment (AQA), evaluates it on AQA-7 and MTL-AQA datasets, and introduces a new publicly available dataset, FR-FS. It is related to computer vision and AQA.",AQA-7;MTL-AQA;FR-FS
+111,10.1016/j.knosys.2021.107388,yes,The paper proposes a learning and fusion network for action quality assessment in sports competitions and evaluates it on the UNLV-Diving dataset. It is related to computer vision and AQA.,UNLV-Dive
+112,10.1016/j.jvcir.2021.103304,yes,"The paper proposes an analysis framework for fitness actions, builds a new dataset called Fitness-28, and aims to assess fitness action. It is related to computer vision (skeleton data) and AQA.",Fitness-28
+113,10.1007/s11263-021-01486-4,yes,"The paper proposes SportsCap for 3D human motion capture and fine-grained understanding in sports videos, using both public and proposed datasets, and mentions applications like action assessment. It is related to computer vision and AQA.",
+114,10.1007/s11760-021-01890-w,yes,The paper proposes a temporal attention learning method for action quality assessment in sports videos and evaluates it on the AQA-7 dataset. It is related to computer vision and AQA.,AQA-7
+115,10.1145/3453892.3461624,yes,The paper addresses Action Quality Assessment (AQA) using self-supervised alignment and evaluates its method on the MTL-AQA dataset. It is related to computer vision and AQA.,MTL-AQA
+116,10.1016/j.eswa.2020.114553,no,The article is about deep reinforcement learning for financial trading and is not related to vision-based methods or Human Action Quality Assessment (AQA).,
+117,10.1145/3394171.3421895,no,"The article is a workshop description, summarizing research areas (including AQA), rather than presenting original research that uses or produces specific datasets. It falls under the exclusion criterion for surveys or reviews.",
+118,10.1145/3394171.3413560,yes,"The paper proposes a network for action assessment in long videos, collects and annotates a new Rhythmic Gymnastics dataset, and is related to computer vision and AQA.",Rhythmic Gymnastics
+119,10.3390/electronics9040568,yes,"The paper proposes a learning framework for fine-grained human action quality assessment using skeletal representations from RGB video, and evaluates it on the MIT Olympic Scoring dataset and UNLV Olympic Scoring dataset. It is related to computer vision and AQA.",MIT Olympic Scoring;UNLV Olympic Scoring
+120,10.1145/3341105.3374092,yes,The paper proposes a data-driven method for real-time hand action quality assessment using RGB video and evaluates it on their own Origami Video Dataset. It meets all inclusion criteria and violates none of the exclusion criteria.,Origami Video
+121,10.1007/978-3-030-58577-8_14,yes,"The paper proposes an asymmetric modeling for action assessment, using JIGSAWS, TASD-2, and AQA-7 datasets. It aligns with vision-based AQA.",JIGSAWS;TASD-2;AQA-7
+122,10.1109/ICIP.2019.8802979,no,"The paper focuses on spatio-temporal action detection, not human action quality assessment.",
+123,10.1007/978-3-030-20876-9_10,yes,The paper proposes ScoringNet for action quality assessment in skilled sports using 3D CNNs and evaluates it on three datasets. It meets all inclusion criteria and violates none of the exclusion criteria.,
+124,10.1109/CVPR.2018.00054,no,"The paper focuses on human action recognition, not human action quality assessment.",
+125,10.1109/ICDH.2018.00020,no,"The paper focuses on action recognition of large animals (cows), not human action quality assessment.",
+126,10.1016/j.patcog.2017.12.007,no,"The paper primarily uses motion capture data, which is not considered a vision-based method.",
+127,10.1007/978-3-030-00767-6_12,yes,The paper proposes an end-to-end framework using 3D CNNs for action quality assessment in videos and evaluates it on three public datasets. It meets all inclusion criteria and violates none of the exclusion criteria.,
+128,10.5220/0006595904860492,no,"The paper is about Automatic Question Answering (NLP), not Human Action Quality Assessment, and does not use vision-based methods.",
+129,10.1108/OIR-10-2016-0299,no,"The paper is about Automatic Question Answering (NLP) for mining user attitudes, not Human Action Quality Assessment, and does not use vision-based methods.",
+130,10.1109/SSCI.2017.8285270,no,"The paper introduces a repository of motion capture data, which is not considered a vision-based method.",
+131,10.1007/978-3-319-56357-2_19,no,"The paper focuses on action evaluation in game AI (Othello), not human action quality assessment, and does not use vision-based methods.",
+132,10.1007/978-3-319-10599-4_36,yes,The paper introduces a learning-based framework for assessing the quality of human actions in videos using spatiotemporal pose features and evaluates it on a new Olympic sports dataset. It meets all inclusion criteria and violates none of the exclusion criteria.,
+133,10.1007/s00521-023-09068-w,yes,"The paper proposes a method for action quality assessment in videos and evaluates it on AQA-7, MTL-AQA, and JIGSAWSS datasets. It meets all inclusion criteria and violates none of the exclusion criteria.",AQA-7;MTL-AQA;JIGSAWS
+134,10.3390/s19194129,no,"The paper is a survey of vision-based human action evaluation methods, which is an exclusion criterion.",
+135,10.1007/s10772-020-09684-0,no,The article is not related to using vision-based methods and not related to Human Action Quality Assessment.,
+136,10.1038/s41597-022-01188-7,yes,The article presents a vision-based dataset for human action quality evaluation (Functional Movement Screen).,FMS
+137,10.3390/en15062071,no,"The article uses data gloves for action evaluation, which is not a vision-based method.",
+138,10.1155/2022/8950732,yes,The article proposes a vision-based model for evaluating the quality of tennis players' training movements using depth imaging and RGBD images.,
+139,10.1155/2022/5430463,yes,The article proposes a vision-based method for tennis motion evaluation using deep learning and evaluates it on the MSR Action 3D database.,MSR-Action3D
+140,10.1109/TCSVT.2020.3017727,yes,"The article proposes a vision-based deep learning model for Action Quality Assessment, tested on Olympics Diving and Gymnastic vaults.",
+141,10.1007/s11042-012-1097-x,no,"The article is about web video categorization, not Human Action Quality Assessment.",
+142,10.1155/2017/9281321,no,The article is not related to using vision-based methods and not related to Human Action Quality Assessment.,
+143,10.1038/s41558-018-0343-2,no,The article is not related to using vision-based methods and not related to Human Action Quality Assessment.,
+144,10.1109/JIOT.2023.3301795,no,"The article is not related to using vision-based methods and the ""action quality"" discussed refers to agent actions in device orchestration, not human action quality assessment.",
