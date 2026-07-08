@@ -1,0 +1,3 @@
+stage,model,records_processed,api_calls,input_tokens,output_tokens,embedding_tokens,index_time_sec,extraction_time_sec,execution_time_sec,cost_input_usd,cost_output_usd,cost_embedding_usd,cost_usd
+eligibility,gemini-2.5-flash,54,54,124176,995,825702,185.54700000000594,353.57799999999406,539.125,0.037252799999999996,0.0024875,0.16514040000000002,0.20488070000000003
+harmonization,gemini-2.5-pro,54,1,1431,795,,,,57.26499999999942,0.00178875,0.00795,,0.009738750000000001

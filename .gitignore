@@ -183,4 +183,6 @@ cython_debug/
 
 # Full text PDFs excluded
 data/full_text_pdf/
+data/full_text_pdf_rag/
 vectorstore/
+vectorstore_sensitivity/
