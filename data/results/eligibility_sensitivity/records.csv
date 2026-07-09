@@ -1,55 +1,65 @@
 Title,Data Source,Data Source Harmonized
 Baby et al. - 2022 - Representation Learning Using Rank Loss for Robust Neurosurgical Skills Evaluation.pdf,JIGSAWS;NETS,JIGSAWS;NETS
 Chang - 2022 - Research on Tennis Motion Evaluation Method and System Based on Deep Learning.pdf,,
+Chen et al. - 2024 - Auto-encoding score distribution regression for action quality assessment.pdf,AQA-7;JIGSAWS;MTL-AQA,AQA-7;JIGSAWS;MTL-AQA
 Dadashzadeh et al. - 2024 - PECoP Parameter Efficient Continual Pretraining for Action Quality Assessment.pdf,FineDiving;JIGSAWS;MTL-AQA;PD4T,FineDiving;JIGSAWS;MTL-AQA;PD4T
-Du et al. - 2023 - View-Invariant Center-of-Pressure Metrics Estimation With Monocular RGB Camera.pdf,,
+Du et al. - 2023 - View-Invariant Center-of-Pressure Metrics Estimation With Monocular RGB Camera.pdf,A data set with kinematic and ground reaction forces of human balance;novel body landmark dataset,Human Balance;Novel Body Landmark
 Du et al. - 2024 - Learning Semantics-Guided Representations for Scoring Figure Skating.pdf,Finediving;OlympicFS,FineDiving;OlympicFS
 Fang et al. - 2024 - Which is the Better Teacher Action A New Ranking Model and Dataset.pdf,JIGSAWS;TAQR,JIGSAWS;TAQR
 Farabi et al. - 2022 - Improving Action Quality Assessment Using Weighted Aggregation.pdf,MTL-AQA,MTL-AQA
 Gallardo et al. - 2024 - GYMetricPose A light-weight angle-based graph adaptation for action quality assessment.pdf,AQA 7 dataset;Fitness-AQA,AQA-7;Fitness-AQA
 Gedamu et al. - 2023 - Fine-Grained Spatio-Temporal Parsing Network for Action Quality Assessment.pdf,AQA-7;AQA-7-Dive;FineDiving;MIT-Dive;MTL-AQA;UNLV;UNLV-Dive;UNLV-Vault,AQA-7;AQA-7-Dive;FineDiving;MIT-Dive;MTL-AQA;UNLV;UNLV-Dive;UNLV-Vault
-Hachaj et al. - 2017 - The open online repository of karate motion capture data A tool for scientists and sport educators.pdf,open online repository of karate motion capture data,KarateMotionCapture
+Hachaj et al. - 2017 - The open online repository of karate motion capture data A tool for scientists and sport educators.pdf,open online repository of karate motion capture data,Karate Motion Capture
 Han et al. - 2023 - MLA-LSTM A Local and Global Location Attention LSTM Learning Model for Scoring Figure Skating.pdf,Fis-V;MIT-Skate,Fis-V;MIT-Skate
 Ingwersen et al. - 2023 - Video-based Skill Assessment for Golf Estimating Golf Handicap.pdf,,
-Ji et al. - 2023 - Localization-assisted Uncertainty Score Disentanglement Network for Action Quality Assessment.pdf,AGF-Olympic;AQA-7 dataset;FR-FS;FineDiving;FineFS;Fis-V;HeiChole;JIG-SAWS;MIT-Skating;MTL-AQA;Rhythmic Gymnastics,AGF-Olympic;AQA-7;FR-FS;FineDiving;FineFS;Fis-V;HeiChole;JIGSAWS;MIT-Skate;MTL-AQA;RhythmicGymnastics
-Lei et al. - 2020 - Learning Effective Skeletal Representations on RGB Video for Fine-Grained Human Action Quality Asses.pdf,,
+Ji et al. - 2023 - Localization-assisted Uncertainty Score Disentanglement Network for Action Quality Assessment.pdf,AGF-Olympic;AQA-7 dataset;FR-FS;FineDiving;FineFS;Fis-V;HeiChole;JIG-SAWS;MIT-Skating;MTL-AQA;Rhythmic Gymnastics,AGF-Olympic;AQA-7;FR-FS;FineDiving;FineFS;Fis-V;HeiChole;JIGSAWS;MIT-Skate;MTL-AQA;Rhythmic Gymnastics
+Ke et al. - 2024 - Two-path target-aware contrastive regression for action quality assessment.pdf,AQA-7;FineDiving;JIGSAWS;MTL-AQA,AQA-7;FineDiving;JIGSAWS;MTL-AQA
+Lei et al. - 2020 - Learning Effective Skeletal Representations on RGB Video for Fine-Grained Human Action Quality Assessment.pdf,,
+Lei et al. - 2023 - Multi-skeleton structures graph convolutional network for action quality assessment in long videos.pdf,MIT-skate dataset;Rhythmic Gymnastics dataset,MIT-Skate;Rhythmic Gymnastics
 Li et al. - 2021 - Improving the Movement Synchrony Estimation with Action Quality Assessment in Children Play Therapy.pdf,PT13,PT13
 Li et al. - 2021 - Skeleton Based Action Quality Assessment of Figure Skating Videos.pdf,MIT figure skating dataset,MIT-Skate
+Li et al. - 2021 - What and how well you exercised An efficient analysis framework for fitness actions.pdf,Fitness-28,Fitness-28
+Li et al. - 2022 - Skeleton-based deep pose feature learning for action quality assessment on figure skating videos.pdf,ExPose;FIS-V;MIT-skate;QMAR rehabilitation movement dataset,ExPose;Fis-V;MIT-Skate;QMAR Rehabilitation Movement
 Li et al. - 2022 - Tai Chi Action Quality Assessment and Visual Analysis with a Consumer RGB-D Camera.pdf,Finediving;TaiChi-24,FineDiving;TaiChi-24
+Li et al. - 2023 - A Graph Convolutional Siamese Network for the Assessment and Recognition of Physical Rehabilitation Exercises.pdf,,
 Li et al. - 2023 - Gaussian guided frame sequence encoder network for action quality assessment.pdf,AQA-7;MTL–AQA,AQA-7;MTL-AQA
 Li et al. - 2023 - MMASD A Multimodal Dataset for Autism Intervention Analysis.pdf,MMASD,MMASD
 Li et al. - 2024 - FineRehab A Multi-modality and Multi-task Dataset for Rehabilitation Analysis.pdf,FineRehab,FineRehab
-Lin e Zou - 2022 - Design of a Professional Sports Competition Adjudication System Based on Data Analysis and Action Re.pdf,,
+Lin e Zou - 2022 - Design of a Professional Sports Competition Adjudication System Based on Data Analysis and Action Recognition Algorithm.pdf,,
 Liu et al. - 2023 - A Figure Skating Jumping Dataset for Replay-Guided Action Quality Assessment.pdf,AQA-7;BPAD;FR-FS;FineDiving;FisV-5;Fitness-AQA;MIT-Diving;MIT-Skating;MTL-AQA;RFSJ;UNLV Vault,AQA-7;BPAD;FR-FS;FineDiving;Fis-V;Fitness-AQA;MIT-Dive;MIT-Skate;MTL-AQA;RFSJ;UNLV-Vault
-Liu et al. - 2023 - A Novel Model for Intelligent Pull-Ups Test Based on Key Point Estimation of Human Body and Equipmen.pdf,SDUST-PUT,SDUST-PUT
+Liu et al. - 2023 - A Novel Model for Intelligent Pull-Ups Test Based on Key Point Estimation of Human Body and Equipment.pdf,SDUST-PUT,SDUST-PUT
 Liu et al. - 2023 - Multi-Stage Action Quality Assessment Method.pdf,AQA-7;FineDiving;MTL-AQA,AQA-7;FineDiving;MTL-AQA
-Mourchid e Slama - 2023 - MR-STGN Multi-Residual Spatio Temporal Graph Network Using Attention Fusion for Patient Action Asse.pdf,UI-PRMD,UI-PRMD
+Mourchid e Slama - 2023 - MR-STGN Multi-Residual Spatio Temporal Graph Network Using Attention Fusion for Patient Action Assessment.pdf,UI-PRMD,UI-PRMD
 Nagai et al. - 2024 - MMW-AQA Multimodal In-the-Wild Dataset for Action Quality Assessment.pdf,AQA-7;FineDiving;LOGO;MMW-AQA;MTL-AQA,AQA-7;FineDiving;LOGO;MMW-AQA;MTL-AQA
 Parmar e Morris - 2019 - Action Quality Assessment Across Multiple Actions.pdf,AQA-7,AQA-7
 Parmar e Morris - 2019 - What and How Well You Performed A Multitask Learning Approach to Action Quality Assessment.pdf,MIT Dive;MTL-AQA;UNLV Dive,MIT-Dive;MTL-AQA;UNLV-Dive
 Parmar et al. - 2021 - Piano Skills Assessment.pdf,Piano-Skills-Assessment,PISA
-Pirsiavash et al. - 2014 - Assessing the Quality of Actions.pdf,Diving Dataset;Figure Skating Dataset,Diving;FigureSkating
-Ren et al. - 2022 - An Efficient Motion Registration Method Based on Self-Coordination and Self-Referential Normalizatio.pdf,,
+Parmar et al. - 2022 - Domain Knowledge-Informed Self-supervised Representations for Workout Form Assessment.pdf,Fitness-AQA;Waseda backsquat dataset,Fitness-AQA;Waseda Backsquat
+"Patrona et al. - 2018 - Motion analysis Action detection, recognition and evaluation based on motion capture data.pdf",CVD Dataset;MSR-Action3D;MSRC12,CVD;MSR-Action3D;MSRC12
+Pirsiavash et al. - 2014 - Assessing the Quality of Actions.pdf,Diving Dataset;Figure Skating Dataset,Diving;Figure Skating
+Ren et al. - 2022 - An Efficient Motion Registration Method Based on Self-Coordination and Self-Referential Normalization.pdf,KTH,KTH
 Roditakis et al. - 2021 - Towards Improved and Interpretable Action Quality Assessment with Self-Supervised Alignment.pdf,MTL-AQA,MTL-AQA
-Sardari et al. - 2024 - LightPRA A Lightweight Temporal Convolutional Network for Automatic Physical Rehabilitation Exercis.pdf,KInematic assessment of MOvement for remote monitoring of physical REhabilitation (KIMORE);University of Idaho-Physical Rehabilitation Movement Data (UI-PRMD),KIMORE;UI-PRMD
+Sardari et al. - 2024 - LightPRA A Lightweight Temporal Convolutional Network for Automatic Physical Rehabilitation Exercise Assessment.pdf,KInematic assessment of MOvement for remote monitoring of physical REhabilitation (KIMORE);University of Idaho-Physical Rehabilitation Movement Data (UI-PRMD),KIMORE;UI-PRMD
 Shen e Lu - 2022 - RARN A Real-Time Skeleton-based Action Recognition Network for Auxiliary Rehabilitation Therapy.pdf,Rehabilitation Action for Degenerative Spine Diseases (RDSD),RDSD
 Tang et al. - 2020 - Uncertainty-Aware Score Distribution Learning for Action Quality Assessment.pdf,AQA-7;JIGSAWS;MTL-AQA,AQA-7;JIGSAWS;MTL-AQA
-Wang et al. - 2020 - Towards a data-driven method for RGB video-based hand action quality assessment in real time.pdf,Egohands Dataset;Origami Video Dataset,Egohands;OrigamiVideo
-Wang et al. - 2021 - TSA-Net Tube Self-Attention Network for Action Quality Assessment.pdf,AQA-7;Fall Recognition in Figure Skating (FR-FS);MTL-AQA,AQA-7;FR-FS;MTL-AQA
+Wang et al. - 2020 - Towards a data-driven method for RGB video-based hand action quality assessment in real time.pdf,Egohands Dataset;Origami Video Dataset,Egohands;Origami Video
+Wang et al. - 2021 - TSA-Net Tube Self-Attention Network for Action Quality Assessment.pdf,AQA-7;FR-FS;MTL-AQA,AQA-7;FR-FS;MTL-AQA
 Wang et al. - 2023 - A Temporal Action Evaluation Algorithm for Medical Clinical Skill Operations.pdf,,
 Wang et al. - 2024 - Action Quality Assessment with Multi-scale Temporal Attention Mechanism.pdf,AQA-7;MTL-AQA,AQA-7;MTL-AQA
-Xiang et al. - 2018 - S3D Stacking Segmental P3D for Action Quality Assessment.pdf,UNLV-Dive,UNLV-Dive
-Xing et al. - 2022 - Functional movement screen dataset collected with two Azure Kinect depth sensors.pdf,Functional movement screen dataset collected with two azure Kinect depth sensors,FunctionalMovementScreen
-Xu et al. - 2022 - FineDiving A Fine-grained Dataset for Procedure-aware Action Quality Assessment.pdf,FineDiving;MIT-Figure Skating dataset;MTL-AQA;Olympic judging dataset;first-person basketball dataset,FineDiving;MIT-Skate;MTL-AQA;OlympicJudging;First-PersonBasketball
+Xiang et al. - 2018 - S3D Stacking Segmental P3D for Action Quality Assessment.pdf,UNLV-Dive dataset,UNLV-Dive
+Xing et al. - 2022 - Functional movement screen dataset collected with two Azure Kinect depth sensors.pdf,Functional movement screen dataset collected with two azure Kinect depth sensors,Functional Movement Screen
+Xu et al. - 2022 - FineDiving A Fine-grained Dataset for Procedure-aware Action Quality Assessment.pdf,FineDiving;MIT-Figure Skating dataset;MTL-AQA dataset;Olympic judging dataset;first-person basketball dataset,FineDiving;MIT-Skate;MTL-AQA;Olympic Judging;First-Person Basketball
 Xu et al. - 2024 - FineParser A Fine-Grained Spatio-Temporal Action Parser for Human-Centric Action Quality Assessment.pdf,FineDiving;FineDiving-HM,FineDiving;FineDiving-HM
-Yao et al. - 2023 - A Contrastive Learning Network for Performance Metric and Assessment of Physical Rehabilitation Exer.pdf,KIMORE;UI-PRMD,KIMORE;UI-PRMD
+Yao et al. - 2023 - A Contrastive Learning Network for Performance Metric and Assessment of Physical Rehabilitation Exercises.pdf,KIMORE;UI-PRMD,KIMORE;UI-PRMD
 Yu et al. - 2020 - Skeleton-Based Detection of Abnormalities in Human Actions Using Graph Convolutional Networks.pdf,UI-PRMD,UI-PRMD
 Yu et al. - 2021 - Group-aware Contrastive Regression for Action Quality Assessment.pdf,AQA-7;JIGSAWS;MTL-AQA,AQA-7;JIGSAWS;MTL-AQA
-Yu et al. - 2024 - EGCN++ A New Fusion Strategy for Ensemble Learning in Skeleton-Based Rehabilitation Exercise Assess.pdf,EHE;KIMORE,EHE;KIMORE
-Zahan et al. - 2024 - Learning Sparse Temporal Video Mapping for Action Quality Assessment in Floor Gymnastics.pdf,AGF-Olympics;AQA-7;FineDiving;FineGym;Fis-V;LOGO;MIT-Dive;MIT-Skate;MTL-AQA;UNLV-Dive;UNLV-Vault,AGF-Olympic;AQA-7;FineDiving;FineGym;Fis-V;LOGO;MIT-Dive;MIT-Skate;MTL-AQA;UNLV-Dive;UNLV-Vault
-Zeng et al. - 2020 - Hybrid Dynamic-static Context-aware Attention Network for Action Assessment in Long Videos.pdf,Rhythmic Gymnastics dataset,RhythmicGymnastics
-Zhang et al. - 2022 - Semi-Supervised Action Quality Assessment With Self-Supervised Segment Feature Recovery.pdf,JIGSAWS dataset;MTL-AQA;Rhythmic Gymnastics dataset,JIGSAWS;MTL-AQA;RhythmicGymnastics
-Zhang et al. - 2023 - LOGO A Long-Form Video Dataset for Group Action Quality Assessment.pdf,AQA-7-Dive;FSD-10;FineDiving;LOGO;MTL Dive;MTL-AQA;Rhythmic Gymnastics;UNL Dive,AQA-7-Dive;FSD-10;FineDiving;LOGO;MTL-Dive;MTL-AQA;RhythmicGymnastics;UNLV-Dive
+Yu et al. - 2021 - Skeleton-based human action evaluation using graph convolutional network for monitoring Alzheimer’s progression.pdf,AHA-3D;EJMQA;SPHERE;UI-PRMD,AHA-3D;EJMQA;SPHERE;UI-PRMD
+Yu et al. - 2024 - EGCN++ A New Fusion Strategy for Ensemble Learning in Skeleton-Based Rehabilitation Exercise Assessment.pdf,EHE;KIMORE,EHE;KIMORE
+Zahan et al. - 2024 - Learning Sparse Temporal Video Mapping for Action Quality Assessment in Floor Gymnastics.pdf,AGF-Olympics;AQA-7;FineDiving;FineGym;Fis-V;LOGO;MIT-Dive;MIT-Skate;MTL-AQA;UNLV-Dive;UNLV-Vault,AGF-Olympics;AQA-7;FineDiving;FineGym;Fis-V;LOGO;MIT-Dive;MIT-Skate;MTL-AQA;UNLV-Dive;UNLV-Vault
+Zeng et al. - 2020 - Hybrid Dynamic-static Context-aware Attention Network for Action Assessment in Long Videos.pdf,Rhythmic Gymnastics dataset,Rhythmic Gymnastics
+Zhang et al. - 2022 - Semi-Supervised Action Quality Assessment With Self-Supervised Segment Feature Recovery.pdf,JIGSAWS dataset;MTL-AQA;Rhythmic Gymnastics dataset,JIGSAWS;MTL-AQA;Rhythmic Gymnastics
+Zhang et al. - 2023 - Label-reconstruction-based pseudo-subscore learning for action quality assessment in sporting events.pdf,,
+Zhang et al. - 2023 - LOGO A Long-Form Video Dataset for Group Action Quality Assessment.pdf,AQA-7-Dive;FSD-10;FineDiving;LOGO;MTL Dive;MTL-AQA;Rhythmic Gymnastics;UNL Dive,AQA-7-Dive;FSD-10;FineDiving;LOGO;MTL-Dive;MTL-AQA;Rhythmic Gymnastics;UNLV-Dive
 Zhang et al. - 2024 - Narrative Action Evaluation with Prompt-Guided Multimodal Interaction.pdf,FineGym;MTL-AQA,FineGym;MTL-AQA
-Zhou et al. - 2023 - A Video-Based Augmented Reality System for Human-in-the-Loop Muscle Strength Assessment of Juvenile.pdf,JDM dataset,JDM
+Zhou et al. - 2023 - A Video-Based Augmented Reality System for Human-in-the-Loop Muscle Strength Assessment of Juvenile Dermatomyositis.pdf,JDM dataset,JDM
 Zhou et al. - 2023 - Hierarchical Graph Convolutional Networks for Action Quality Assessment.pdf,AQA-7;FineDiving;JIGSA WS;MTL-AQA,AQA-7;FineDiving;JIGSAWS;MTL-AQA
