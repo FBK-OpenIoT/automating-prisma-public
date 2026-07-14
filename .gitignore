@@ -187,3 +187,4 @@ data/full_text_pdf_rag/
 data/CLAUDE_full_text_pdf/
 vectorstore/
 vectorstore_sensitivity/
+vectorstore_claude/
