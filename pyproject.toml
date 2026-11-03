@@ -1,0 +1,36 @@
+[project]
+name = "automating-prisma"
+version = "0.1.0"
+description = "PRISMA-aligned literature screening and full-text dataset extraction with Gemini and Claude"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "anthropic>=0.116.0",
+    "faiss-cpu",
+    "google-genai",
+    "ipykernel>=6.30.1",
+    "langchain>=0.3.27,<0.4",
+    "langchain-community",
+    "langchain-google-genai",
+    "langchain-text-splitters>=0.3.11,<0.4",
+    "notebook",
+    "openpyxl",
+    "pandas",
+    "numpy",
+    "pydantic>=2,<3",
+    "pypdf",
+    "python-dotenv",
+    "statsmodels>=0.14.6",
+    "tabulate>=0.10.0",
+    "xlrd",
+]
+
+[tool.uv]
+package = false
+
+[dependency-groups]
+dev = ["pytest>=8", "nbformat>=5", "nbclient>=0.10"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["notebooks"]
