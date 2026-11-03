@@ -1,5 +1,21 @@
 # Workflow and configuration
 
+## Strategy
+
+The validation workflow has three methodological steps:
+
+1. Structured search: execute database-specific queries to identify papers that
+   refer to datasets in the target domain, then normalize and deduplicate exports.
+2. Title and abstract screening: apply declared inclusion and exclusion criteria
+   with Gemini or Claude and extract named datasets when the abstract supports it.
+3. Full-text eligibility: use RAG to extract datasets for retained papers without
+   an associated dataset, then combine the results into the final review table.
+
+The main experiment uses a dataset-oriented query, not the broader reference
+query. The reference notebook replicates only identification. The complementary
+full-text sensitivity experiment is separate from the primary eligibility run.
+See [article comparison](article-comparison.md) for verified results and caveats.
+
 ## Inputs and results
 
 `data/metadata/` contains the IEEE, Scopus, and Web of Science exports.
@@ -20,13 +36,20 @@ Run Gemini 01, 02, then 03, or Claude 01, 02, then 03. Screening writes
 `review_final.csv`. Claude files have the `CLAUDE_` prefix. Repeated Gemini
 experiments use the editable `RUN_ID` cell.
 
-The replication notebook reconstructs the reference study. Sensitivity analysis
-reads five saved runs; eligibility sensitivity executes a separate API experiment.
+The main notebooks live in `notebooks/gemini/` and `notebooks/claude/`, with
+matching names: `01_identification_screening`, `02_screening_evaluation`, and
+`03_full_text_eligibility`. Claude result files retain their historical prefix.
+
+`notebooks/reference/reproduce_identification.ipynb` reconstructs the reference
+search corpus. `notebooks/analysis/run_stability_and_costs.ipynb` reads five saved
+runs; `full_text_sensitivity.ipynb` executes a separate API experiment. Model
+comparison and annotation agreement are also in `notebooks/analysis/`.
 
 ## Configuration
 
 Copy `.env.example` to `.env`. Shell variables take precedence. Analysis notebooks
-need no keys. Model IDs must be supported by your account. Historical IDs and
+that read saved results need no keys; full-text sensitivity needs Gemini access.
+Model IDs must be supported by your account. Historical IDs and
 token counts appear in cost CSVs. Notebook cost formulas are study-era estimates,
 not current provider quotes. Check rates before budgeting a run.
 
@@ -50,3 +73,12 @@ not supported.
 source changes. Hosted model revisions, retrieval, API failures, rate limits,
 and human decisions can affect new results. Validate decisions and extracted
 names before using them in a review.
+
+## Notebook text
+
+Notebook Markdown identifies the next operation or explains an observed result.
+Numerical notes such as the comparison of 59 identified papers with 50 in the
+reference study remain next to their outputs. These are historical observations,
+not assertions about a future run. General strategy and usage belong here and
+in the notebook guide. Scientific prompts and their criteria remain beside the
+code that executes them.

@@ -6,7 +6,7 @@ from langchain_core.embeddings import Embeddings
 from langchain_core.documents import Document
 from langchain_community.vectorstores import FAISS
 
-from automating_prisma.runtime import (
+from _shared import (
     project_root, require_environment, cache_fingerprint,
     load_cached_index, save_cached_index,
 )
@@ -62,7 +62,7 @@ def test_empty_pdf_input(tmp_path):
         cache_fingerprint(str(tmp_path), "test", 2000, 400)
 
 
-@pytest.mark.parametrize("name", ["03_eligibility_RAG", "CLAUDE_03_eligibility_RAG", "eligibility_sensitivity"])
+@pytest.mark.parametrize("name", ["gemini/03_full_text_eligibility", "claude/03_full_text_eligibility", "analysis/full_text_sensitivity"])
 def test_notebook_index_build_and_reuse(name, tmp_path):
     """Run each real notebook's index builder with synthetic texts and embeddings."""
     import ast

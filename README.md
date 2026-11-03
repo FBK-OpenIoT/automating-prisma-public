@@ -25,8 +25,9 @@ Explore saved results without API credentials:
 uv run jupyter notebook
 ```
 
-Open `notebooks/GEMINI_CLAUDE_comparison.ipynb` to compare recorded reviews or
-`notebooks/datasets_annotation.ipynb` to inspect annotator agreement.
+Open [model comparison](notebooks/analysis/compare_models.ipynb) to compare recorded
+reviews or [annotator agreement](notebooks/analysis/dataset_annotation_agreement.ipynb)
+to inspect the dataset annotations.
 Outputs are retained historical snapshots, not regenerated after source changes.
 
 For new LLM runs, copy `.env.example` to `.env` and fill the keys and supported
@@ -37,14 +38,14 @@ requires Gemini credentials for embeddings.
 
 ## Workflow
 
-Run these notebooks in order, or their matching `CLAUDE_` variants:
+Choose `notebooks/gemini/` or `notebooks/claude/` and run:
 
 1. `01_identification_screening.ipynb`: normalize exports and screen abstracts.
 2. `02_screening_evaluation.ipynb`: evaluate screening and prepare full-text inputs.
-3. `03_eligibility_RAG.ipynb`: extract datasets from local PDFs and combine results.
+3. `03_full_text_eligibility.ipynb`: extract datasets from local PDFs and combine results.
 
-Start Jupyter from the root or `notebooks/`. `uv sync` installs shared helpers
-for either location. LLM runs send text to external providers and may incur
+Start Jupyter anywhere inside this checkout. The notebooks locate their shared
+local helper file automatically. LLM runs send text to external providers and may incur
 charges. See [configuration](docs/workflow.md) before running them.
 
 ## Data and copyright
@@ -61,20 +62,19 @@ See [data sources and rights](docs/data-sources.md).
 - [Notebook guide](notebooks/README.md)
 - [Workflow and configuration](docs/workflow.md)
 - [Data sources and rights](docs/data-sources.md)
-- [Release preparation](docs/release.md)
-- [Change log](CHANGELOG.md)
+- [Comparison with the reference article](docs/article-comparison.md)
+- [Data directory guide](data/README.md)
 
 ## Development
 
 ```bash
 uv sync --locked
 uv run pytest
-uv run python scripts/check_release.py
-uv build
 ```
 
 Tests check imports, offline processing, and caches with synthetic embeddings.
 Offline notebooks use temporary result copies. Tests make no LLM calls.
+This is a notebook workspace: `uv` manages dependencies without installing a library.
 
 ## Citation and license
 

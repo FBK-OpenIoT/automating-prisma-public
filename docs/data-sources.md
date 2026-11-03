@@ -17,8 +17,8 @@ MIT covers original code and documentation, granting no additional rights to
 publisher texts, metadata, articles, or external AQA datasets referenced by DOI.
 
 Full-text PDFs, private manuscripts, extracted text stores, and embeddings remain
-local. RAG caches contain article text even without a PDF extension. Ignore rules
-and release checks exclude these artifacts.
+local. RAG caches contain article text even without a PDF extension. Git ignore
+rules exclude the standard input folders and generated full-text artifacts.
 
 Screening sends titles and abstracts to Gemini or Claude. Full-text workflows
 send extracted text to Google's embedding service and selected context to the

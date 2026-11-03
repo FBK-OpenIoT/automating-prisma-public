@@ -269,7 +269,7 @@ wheels = [
 [[package]]
 name = "automating-prisma"
 version = "0.1.0"
-source = { editable = "." }
+source = { virtual = "." }
 dependencies = [
     { name = "anthropic" },
     { name = "faiss-cpu" },

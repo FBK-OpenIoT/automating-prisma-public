@@ -1,23 +1,42 @@
 # Notebook guide
 
-Run `uv sync --locked`, then `uv run jupyter notebook` from the root or this folder.
-Outputs are retained historical executions, not automatically refreshed results.
-See [workflow configuration](../docs/workflow.md) for separate results and PDFs.
+Run `uv sync --locked`, then `uv run jupyter notebook` from the repository.
+All notebooks resolve paths from the checkout, including when Jupyter starts in
+a notebook subdirectory. No local library installation is required.
+
+## Main experiments
+
+Choose a provider and execute its three notebooks in order:
+
+| Stage | Gemini | Claude |
+| --- | --- | --- |
+| Identification and abstract screening | [01](gemini/01_identification_screening.ipynb) | [01](claude/01_identification_screening.ipynb) |
+| Evaluation and full-text preparation | [02](gemini/02_screening_evaluation.ipynb) | [02](claude/02_screening_evaluation.ipynb) |
+| Full-text eligibility and final review | [03](gemini/03_full_text_eligibility.ipynb) | [03](claude/03_full_text_eligibility.ipynb) |
+
+Stages 01 and 03 call external APIs. Stage 02 operates on local tables. Claude's
+full-text stage uses Gemini embeddings. Configure `.env` before starting API runs.
+
+## Analysis of recorded results
 
 | Notebook | Purpose | API calls |
 | --- | --- | --- |
-| `01_identification_screening.ipynb` | Gemini screening | Gemini |
-| `02_screening_evaluation.ipynb` | Screening evaluation | None |
-| `03_eligibility_RAG.ipynb` | Full-text extraction and final review | Gemini |
-| `CLAUDE_01_identification_screening.ipynb` | Claude screening | Claude |
-| `CLAUDE_02_screening_evaluation.ipynb` | Claude evaluation | None |
-| `CLAUDE_03_eligibility_RAG.ipynb` | Full-text extraction and final review | Claude and Gemini embeddings |
-| `replicated_study_workflow.ipynb` | Reference study reconstruction | None |
-| `GEMINI_CLAUDE_comparison.ipynb` | Compare saved reviews | None |
-| `datasets_annotation.ipynb` | Annotator agreement | None |
-| `sensitivity_analysis.ipynb` | Saved-run agreement and costs | None |
-| `eligibility_sensitivity.ipynb` | Separate full-text experiment | Gemini |
+| [Model comparison](analysis/compare_models.ipynb) | Compare study and dataset coverage | None |
+| [Dataset annotation agreement](analysis/dataset_annotation_agreement.ipynb) | Agreement between annotators | None |
+| [Run stability and costs](analysis/run_stability_and_costs.ipynb) | Compare five saved runs | None |
+| [Full-text sensitivity](analysis/full_text_sensitivity.ipynb) | Run RAG on the complementary screening subset | Gemini |
 
-For each provider, run 01, 02, then 03. Analysis notebooks run independently
-against included results. LLM notebooks write tables and append cost rows; use a
-separate results directory to preserve the recorded data.
+## Reference baseline
+
+[Reproduce identification](reference/reproduce_identification.ipynb) reconstructs
+the reference search corpus from the study exports. It does not repeat the
+reference study's manual screening and eligibility decisions.
+
+Outputs and numeric comparison notes are retained historical observations.
+General methodological descriptions live in the [workflow guide](../docs/workflow.md).
+The [article comparison](../docs/article-comparison.md) distinguishes verified
+agreement from limitations of the saved artifacts.
+
+`_shared.py` contains only local path, configuration, and cache utilities.
+Do not execute it as a pipeline. New runs can overwrite tables; see the workflow
+guide for a separate results directory.

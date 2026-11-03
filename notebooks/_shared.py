@@ -14,7 +14,7 @@ def project_root(start: str | Path | None = None) -> Path:
     for candidate in (start, *start.parents):
         if (candidate / "pyproject.toml").is_file() and (candidate / "notebooks").is_dir():
             return candidate
-    raise FileNotFoundError("Start Jupyter from this repository or its notebooks directory.")
+    raise FileNotFoundError("Start Jupyter inside this repository.")
 
 
 def load_environment() -> None:
