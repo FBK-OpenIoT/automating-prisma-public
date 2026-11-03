@@ -1,7 +1,6 @@
 """Execute analysis on temporary data, leaving committed outputs untouched."""
 import ast
 import json
-import os
 from pathlib import Path
 import shutil
 
@@ -13,6 +12,23 @@ ROOT = Path(__file__).resolve().parents[1]
 OFFLINE = ["02_screening_evaluation", "CLAUDE_02_screening_evaluation",
            "replicated_study_workflow", "datasets_annotation",
            "sensitivity_analysis", "GEMINI_CLAUDE_comparison"]
+
+
+@pytest.mark.parametrize("prefix", ["", "CLAUDE_"])
+def test_screening_exports_next_stage_input(prefix, tmp_path):
+    import pandas as pd
+
+    name = prefix + "01_identification_screening.ipynb"
+    notebook = json.loads((ROOT / "notebooks" / name).read_text(encoding="utf-8"))
+    export = next("".join(c["source"]) for c in notebook["cells"]
+                  if 'df_evaluated_final.to_csv(result_path' in "".join(c["source"]))
+    frame = pd.DataFrame([dict(DOI="10.0000/synthetic", Title="Synthetic study",
+                               Authors="Example", Year=2026, Abstract="Synthetic abstract",
+                               Include="maybe", Reason="Needs full text", **{"Data Source": ""})])
+    exec(compile(export, name, "exec"), dict(df_evaluated_final=frame, result_path=str(tmp_path) + "/"))
+    path = tmp_path / (prefix + "df_evaluated_validation.csv")
+    loaded = pd.read_csv(path, keep_default_na=False)
+    pd.testing.assert_frame_equal(loaded, frame)
 
 
 @pytest.mark.parametrize("path", sorted((ROOT / "notebooks").glob("*.ipynb")), ids=lambda p: p.stem)
