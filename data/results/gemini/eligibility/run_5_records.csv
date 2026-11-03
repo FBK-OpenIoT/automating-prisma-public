@@ -1,0 +1,22 @@
+Title,Data Source,Data Source Harmonized
+An et al. - 2024 - Multi-Stage Contrastive Regression for Action Quality Assessment.pdf,FineDiving,FineDiving
+Bai et al. - 2022 - Action Quality Assessment with Temporal Parsing Transformer.pdf,AQA-7;JIGSAWS;MTL-AQA,AQA-7;JIGSAWS;MTL-AQA
+Cao et al. - 2024 - Action-Evaluator A Visualization Approach for Player Action Evaluation in Soccer.pdf,,
+Chariar et al. - 2023 - AI Trainer Autoencoder Based Approach for Squat Analysis and Correction.pdf,,
+Chen - 2022 - A Data Mining‐Based Model for Evaluating Tennis Players’ Training Movements.pdf,,
+Chen et al. - 2021 - SportsCap Monocular 3D Human Motion Capture and Fine-Grained Understanding in Challenging Sports Vi.pdf,MTL-AQA;SMART,MTL-AQA;SMART
+Hipiny et al. - 2023 - Who danced better Ranked tiktok dance video dataset and pairwise action quality assessment method.pdf,,
+Jain et al. - 2021 - Action Quality Assessment Using Siamese Network-Based Deep Metric Learning.pdf,Gymnastic vaults;MTL-AQA;Olympics Diving,Gymnastic Vaults;MTL-AQA;Olympics Diving
+Jin et al. - 2015 - Virtual Personal Trainer via the Kinect Sensor.pdf,,
+Joung et al. - 2023 - Contrastive Learning for Action Assessment Using Graph Convolutional Networks With Augmented Virtual.pdf,AI-Hub Fitness Dataset;Squat Dataset,AI-Hub Fitness;Squat
+Li et al. - 2018 - End-To-End Learning for Action Quality Assessment.pdf,,
+Li et al. - 2019 - ScoringNet Learning Key Fragment for Action Quality Assessment with Ranking Loss in Skilled Sports.pdf,,
+Li et al. - 2020 - Efficient Fitness Action Analysis Based on Spatio-Temporal Feature Encoding.pdf,,
+Li et al. - 2024 - Martial arts Scoring System based on U-shaped networkWushu intelligent scoring systemLearning to sco.pdf,AFG-Olympics;Fis-v;Fri2023 Dataset;LOGO;MLT AQA,AFG-Olympics;Fis-V;Fri2023;LOGO;MTL-AQA
+Nagai et al. - 2021 - Action Quality Assessment With Ignoring Scene Context.pdf,,
+Nekoui et al. - 2021 - EAGLE Eye Extreme pose Action Grader using detaiL birds Eye view.pdf,AQA-7,AQA-7
+Parmar e Morris - 2017 - Learning to Score Olympic Events.pdf,figure skating dataset;Gymnastic Vault dataset,MIT Diving Quality;Figure Skating;Gymnastic Vault
+Xu et al. - 2022 - Likert Scoring with Grade Decoupling for Long-term Action Assessment.pdf,Fis-V;Rhythmic Gymnastics,Fis-V;Rhythmic Gymnastics
+Zeng e Zheng - 2024 - Multimodal Action Quality Assessment.pdf,Finediving,FineDiving
+Zhang et al. - 2023 - Action Quality Assessment for ASD Behaviour Evaluation.pdf,DREAM dataset,DREAM
+Zhang et al. - 2024 - Adaptive Stage-Aware Assessment Skill Transfer for Skill Determination.pdf,,
