@@ -1,116 +1,83 @@
 # Automating PRISMA
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Python 3.11+](https://img.shields.io/badge/python-3.11+-blue.svg)](https://www.python.org/downloads/)
-[![uv](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/astral-sh/uv/main/assets/badge/v0.json)](https://github.com/astral-sh/uv)
+Automating PRISMA provides research notebooks for literature identification,
+abstract screening, and full-text dataset extraction with retrieval augmented
+generation. It includes Gemini and Claude workflows and recorded results from
+an Action Quality Assessment (AQA) case study.
 
-**Automating PRISMA** is a research-driven framework designed to automate and standardize the systematic literature review (SLR) process. It strictly aligns with the **PRISMA 2020** (Preferred Reporting Items for Systematic Reviews and Meta-Analyses) standards to ensure methodological rigor and reproducibility.
+The workflow supports a PRISMA-aligned review process. Reviewers define criteria,
+resolve uncertain decisions, and complete the reporting. Low-temperature model
+settings do not guarantee identical responses between runs.
 
-By integrating Large Language Models (LLMs)—specifically **Google Gemini**—and **Retrieval-Augmented Generation (RAG)** systems, the framework accelerates the labor-intensive phases of identification, screening, and eligibility assessment. It aims to reduce human error and variability while maintaining high transparency through deterministic outputs, fallback mechanisms, and "human-in-the-loop" verification.
+## Install
 
----
+Use Python 3.11 or later and [uv](https://docs.astral.sh/uv/). From this checkout:
 
-## 🚀 Key Features
-
-- **Standardized Identification**: Supports structured bibliographic exports from multiple databases (Scopus, IEEE Xplore, Web of Science).
-- **LLM-Powered Screening**: Rapid title and abstract screening using Gemini with deterministic filtering logic based on inclusion/exclusion criteria.
-- **RAG-Based Eligibility**: Deep analysis of full-text PDFs. Documents are segmented, embedded (FAISS), and retrieved to evaluate complex eligibility rules via generative AI.
-- **Metadata Harmonization**: Automatically extracts and standardizes study attributes into a consistent schema for final reporting.
-- **Reliability Assessment**: Built-in support for Inter-Rater Reliability (Fleiss' Kappa) to validate automated results against human annotations.
-- **Reproducibility**: Entire pipeline documented in modular Jupyter notebooks, managed by `uv` for consistent dependency environments.
-
----
-
-## 📂 Project Structure
-
-```text
-automating-prisma/
-├── data/
-│   ├── full_text_pdf/      # Input PDFs for full-text eligibility assessment
-│   ├── metadata/           # Raw bibliographic exports (CSV/XLS) from Scopus, IEEE, WoS
-│   ├── results/            # Output datasets from screening, eligibility, and evaluation
-│   └── study_datasets.json # Mapping of study DOIs to analyzed datasets
-├── notebooks/
-│   ├── 01_identification_screening.ipynb # Identification & Title/Abstract Screening
-│   ├── 02_screening_evaluation.ipynb     # Evaluation & Metadata Harmonization
-│   ├── 03_eligibility_RAG.ipynb          # RAG-based Full-text Eligibility Assessment
-│   ├── datasets_annotation.ipynb         # External rater agreement analysis
-│   ├── sensitivity_analysis.ipynb        # Model reliability and cost-performance analysis
-│   └── replicated_study_workflow.ipynb   # End-to-end replication of the reference study
-├── vectorstore/            # Locally generated FAISS vector embeddings
-├── pyproject.toml          # Project dependencies (managed by uv)
-└── .env                    # Environment variables (API keys, model selection)
+```bash
+uv sync --locked
 ```
 
----
+## Quickstart
 
-## 🛠️ Getting Started
+Explore saved results without API credentials:
 
-### Prerequisites
-- **Python 3.11+**
-- **[uv](https://github.com/astral-sh/uv)**: Extremely fast Python package installer and resolver.
-- **Google Gemini API Key**: Required for LLM operations.
+```bash
+uv run jupyter notebook
+```
 
-### Installation
+Open `notebooks/GEMINI_CLAUDE_comparison.ipynb` to compare recorded reviews or
+`notebooks/datasets_annotation.ipynb` to inspect annotator agreement.
+Outputs are retained historical snapshots, not regenerated after source changes.
 
-1. **Clone the repository**:
-   ```bash
-   git clone https://github.com/RomeoSilvestri/automating-prisma.git
-   cd automating-prisma
-   ```
+For new LLM runs, copy `.env.example` to `.env` and fill the keys and supported
+model IDs. Gemini screening uses `GEMINI_API_KEY`, `MODEL`, and `MODEL_SUPERVISOR`.
+Full-text extraction also uses `MODEL_EMBEDDING`. Claude uses `CLAUDE_API_KEY`,
+`MODEL_CLAUDE`, and `MODEL_SUPERVISOR_CLAUDE`; its full-text workflow still
+requires Gemini credentials for embeddings.
 
-2. **Install dependencies**:
-   Using `uv` ensures a reproducible virtual environment:
-   ```bash
-   uv sync
-   ```
+## Workflow
 
-3. **Configure environment**:
-   Create a `.env` file in the root directory:
-   ```env
-   GEMINI_API_KEY=your_api_key_here
-   MODEL=gemini-2.5-flash
-   MODEL_SUPERVISOR=gemini-2.5-pro
-   MODEL_EMBEDDING=gemini-embedding-2
-   ```
+Run these notebooks in order, or their matching `CLAUDE_` variants:
 
----
+1. `01_identification_screening.ipynb`: normalize exports and screen abstracts.
+2. `02_screening_evaluation.ipynb`: evaluate screening and prepare full-text inputs.
+3. `03_eligibility_RAG.ipynb`: extract datasets from local PDFs and combine results.
 
-## 🔄 Workflow
+Start Jupyter from the root or `notebooks/`. `uv sync` installs shared helpers
+for either location. LLM runs send text to external providers and may incur
+charges. See [configuration](docs/workflow.md) before running them.
 
-The framework follows the sequential stages of the PRISMA flow:
+## Data and copyright
 
-### 1. Identification & Screening
-Run **`01_identification_screening.ipynb`**. 
-- Processes bibliographic exports from major databases.
-- Uses Gemini to filter papers based on abstracts against defined inclusion criteria.
-- Outputs a preliminary list of "Pass" studies for full-text review.
+Exports, abstracts, annotations, result tables, and notebook outputs are retained.
+Full-text papers, private manuscripts, credentials, and RAG caches remain local
+and are excluded from Git. MIT covers original software and documentation;
+third-party texts retain their rights and source terms. Inclusion does not
+assert unrestricted redistribution or place those texts under MIT.
+See [data sources and rights](docs/data-sources.md).
 
-### 2. Full-Text Eligibility (RAG)
-Run **`03_eligibility_RAG.ipynb`**.
-- *Setup*: Place full-text PDFs in `data/full_text_pdf/`.
-- The notebook segments PDFs, creates vector embeddings, and uses a RAG pipeline to answer specific eligibility questions for each paper.
+## Documentation
 
-### 3. Evaluation & Harmonization
-Run **`02_screening_evaluation.ipynb`**.
-- Compares automated screening results against validation datasets (if available).
-- Harmonizes metadata extracted during previous steps into a final review table.
+- [Notebook guide](notebooks/README.md)
+- [Workflow and configuration](docs/workflow.md)
+- [Data sources and rights](docs/data-sources.md)
+- [Release preparation](docs/release.md)
+- [Change log](CHANGELOG.md)
 
-### 4. Reliability & Performance Analysis
-- **`datasets_annotation.ipynb`**: Analyzes agreement between different raters (automated vs. human) using Fleiss' Kappa.
-- **`sensitivity_analysis.ipynb`**: Evaluates model performance across multiple runs, including cost tracking and execution time metrics.
+## Development
 
----
+```bash
+uv sync --locked
+uv run pytest
+uv run python scripts/check_release.py
+uv build
+```
 
-## 📖 Case Study: Action Quality Assessment (AQA)
+Tests check imports, offline processing, and caches with synthetic embeddings.
+Offline notebooks use temporary result copies. Tests make no LLM calls.
 
-This repository includes data and configurations used for a systematic review on **Action Quality Assessment**. The included datasets in `data/metadata/` and `data/full_text_pdf/` reflect this specific research area, demonstrating the framework's ability to handle complex computer vision literature.
+## Citation and license
 
----
-
-## ⚖️ License
-
-This project is licensed under the **MIT License**. See the [LICENSE](LICENSE) file for details.
-
-Developed by [RomeoSilvestri](https://github.com/RomeoSilvestri).
-
+Cite the associated study when publication details are available and identify
+the revision used. Author: [Romeo Silvestri](https://github.com/RomeoSilvestri).
+Original software and documentation use the [MIT license](LICENSE).
