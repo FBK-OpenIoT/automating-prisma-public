@@ -11,11 +11,16 @@ settings do not guarantee identical responses between runs.
 
 ## Install
 
-Use Python 3.11 or later and [uv](https://docs.astral.sh/uv/). From this checkout:
+Use Python 3.11 or later and [uv](https://docs.astral.sh/uv/).
+Clone the public repository maintained by the unit:
 
 ```bash
+git clone https://github.com/FBK-OpenIoT/automating-prisma-public.git
+cd automating-prisma-public
 uv sync --locked
 ```
+
+From an existing checkout, run only `uv sync --locked`.
 
 ## Quickstart
 
@@ -70,6 +75,7 @@ See [data sources and rights](docs/data-sources.md).
 - [Data sources and rights](docs/data-sources.md)
 - [Comparison with the reference article](docs/article-comparison.md)
 - [Data directory guide](data/README.md)
+- [Historical DOI list](DOI_list.md)
 
 ## Development
 
