@@ -20,6 +20,7 @@ dist/
 *.pem
 *.key
 /data/full_text_pdf*/
+/data/full_text/
 /data/CLAUDE_full_text_pdf/
 /vectorstore*/
 .cache/

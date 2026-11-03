@@ -31,7 +31,7 @@ cache does not reproduce the cold-index timings reported in the article.
 ## Main saved results agree
 
 The following counts were checked directly from the included CSVs and
-`data/study_datasets.json`, using exact DOI intersections and semicolon-separated
+`data/reference/datasets_by_doi.json`, using exact DOI intersections and semicolon-separated
 dataset names, excluding `self-created` from dataset counts.
 
 | Metric | Gemini | Claude | Article |
@@ -47,9 +47,9 @@ dataset names, excluding `self-created` from dataset counts.
 | Additional datasets | 25 | 19 | Table 9 |
 
 The final corpora share 84 studies and 54 datasets, also matching Tables 8-9.
-Sources: [Gemini review](../data/results/review_final.csv),
-[Claude review](../data/results/CLAUDE_review_final.csv), and
-[reference mapping](../data/study_datasets.json). Retained notebook outputs may
+Sources: [Gemini review](../data/results/gemini/final_review.csv),
+[Claude review](../data/results/claude/final_review.csv), and
+[reference mapping](../data/reference/datasets_by_doi.json). Retained notebook outputs may
 represent different experiment runs; they are historical records, not refreshed
 copies of these tables.
 
@@ -66,18 +66,20 @@ copies of these tables.
 - **Claude full-text input (Table 8; Table B.5).** There are 29 unresolved records
   in the abstract table, but 28 rows in the saved Claude eligibility file.
   The paper reports 29 candidate records and 28 extraction calls. Those are
-  distinct quantities; the repository does not contain a per-record availability
-  manifest explaining the difference.
+  distinct quantities. The curated Claude PDF manifest now identifies those 28
+  files, but the reason for the remaining candidate's absence is not documented.
+  That DOI is `10.1007/978-3-031-61678-5_6`; resolve its availability manually.
 - **Manual review (Sections 3.2 and 5.1).** The saved Gemini screening table has
   three `maybe` decisions; evaluation retains every decision other than `no`.
   The article describes manual resolution of three uncertain cases. No separate
   adjudication log demonstrates that resolution. Do not interpret retention of
   `maybe` as a logged manual decision. General sampling and human quality-control
   procedures in the paper are not automated by these notebooks.
-- **Title alignment in eligibility.** The main full-text notebooks sort metadata
-  and extraction results and align them by row position. Reruns require checking
-  PDF coverage and title order, especially when a PDF is missing. The existing
-  logic is retained to avoid changing the study results during this documentation check.
+- **Title alignment in eligibility.** The archived runs used sorted row positions
+  to associate metadata and extracted names. For future runs this has been replaced
+  with manifest DOI joins, or unambiguous normalized titles when no manifest is
+  supplied. Missing PDFs are reported and cannot shift one paper's results onto
+  another paper. The saved study tables and outputs have not been recomputed.
 - **Harmonization detail.** The harmonization prompt guidelines match the article,
   but current screening requests contain row IDs and dataset-name fields, whereas
   Figure 8 labels its input as title/abstract. Explicit name mappings and a

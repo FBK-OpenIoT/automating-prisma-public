@@ -1,34 +1,67 @@
 # Data directory
 
-## Inputs
+The bundled data describe the AQA case study. For a new review use a separate
+private directory and `PRISMA_DATA_DIR`; see [your own data](../docs/using-your-data.md).
 
-`metadata/` contains bibliographic exports. The `*_study` files support replication
-of the reference identification procedure; `*_validation` files are inputs to the
-proposed dataset-oriented search workflow. Export filenames are kept stable.
-`study_datasets.json` maps the 94 reference-study DOIs to dataset names.
+```text
+data/
+  metadata/
+    review/       ieee.csv, scopus.csv, wos.xls
+    reference/    ieee.csv, scopus.csv, wos.xls
+  reference/
+    datasets_by_doi.json
+    pdf_manifests/    gemini.csv, claude.csv
+  annotations/
+    annotator_1.xlsx, annotator_2.xlsx, annotator_3.xlsx
+  results/
+    reference/identified_records.csv
+    gemini/
+      screening_evaluated.csv
+      screening_retained.csv
+      full_text_candidates.csv
+      abstract_review.csv
+      final_review.csv
+      screening/      run_1_records.csv ... run_5_records.csv, cost_summary.csv
+      eligibility/    run_1_records.csv ... run_5_records.csv, cost_summary.csv
+      sensitivity/    records.csv, cost_summary.csv
+    claude/
+      screening_evaluated.csv
+      screening_retained.csv
+      full_text_candidates.csv
+      abstract_review.csv
+      final_review.csv
+      screening/      records.csv, cost_summary.csv
+      eligibility/    records.csv, cost_summary.csv
+  full_text/          local only; excluded from Git
+    gemini/
+    claude/
+    sensitivity/
+```
 
-Full-text inputs remain local in `full_text_pdf/`, `CLAUDE_full_text_pdf/`, and
-`full_text_pdf_rag/`. Those directories and generated caches are ignored by Git.
+`metadata/review/` contains the proposed dataset-oriented search exports.
+`metadata/reference/` supports replication of the broader reference search.
+The reference JSON maps 94 benchmark DOIs to dataset names; annotations are
+independent human classifications, so they are separate from generated results.
+The curated PDF manifests associate recorded reference-manager filenames with
+candidate DOIs, including four truncated or punctuation-modified titles. They
+contain metadata only. The Claude manifest covers 28 of 29 candidates; the
+missing paper still requires manual availability review.
 
-## Recorded results
+Both providers use the same table names inside their own directories:
 
-Existing filenames remain unchanged to preserve the research artifacts and the
-links between notebook stages. Files with `CLAUDE_` belong to the supplementary
-Claude experiment; unprefixed counterparts belong to the primary Gemini workflow.
-
-| Artifact | Meaning |
+| Table | Content |
 | --- | --- |
-| `results/df_evaluated_study.csv` | Replicated reference identification corpus |
-| `results/*df_evaluated_validation.csv` | Full screening decisions and abstracts |
-| `results/*df_screening_passed.csv` | Records retained after screening |
-| `results/*df_evaluated_validation_abstract.csv` | Unresolved records requiring full-text processing |
-| `results/*review.csv` | Study metadata with datasets obtained from abstracts |
-| `results/*review_final.csv` | Final combined study and dataset tables |
-| `results/screening/`, `results/eligibility/` | Five Gemini run records and cost summaries |
-| `results/CLAUDE_screening/`, `results/CLAUDE_eligibility/` | Supplementary Claude records and costs |
-| `results/eligibility_sensitivity/` | Saved complementary full-text experiment |
-| `results/datasets_annotation/` | Three independent annotation workbooks |
+| `screening_evaluated.csv` | Every screened record, decision, reason, and abstract |
+| `screening_retained.csv` | Records not excluded after screening |
+| `full_text_candidates.csv` | Retained records without an extracted dataset |
+| `abstract_review.csv` | Review records with datasets extracted from abstracts |
+| `final_review.csv` | Combined abstract and full-text review |
 
-Abstracts and original rights are discussed in [data sources](../docs/data-sources.md).
-To protect recorded results during a rerun, follow the separate-directory setup
-in the [workflow guide](../docs/workflow.md).
+Gemini has five saved repetitions; Claude has one supplementary execution.
+`cost_summary.csv` contains stage measurements; the notebook cost formulas are
+historical estimates. Files have been moved and renamed without changing their
+contents. Historical notebook outputs may still display the original filenames.
+
+Keep full-text PDFs, manifests, extracted document stores, and embeddings local.
+Abstracts remain included with their existing rights, as explained in
+[data sources](../docs/data-sources.md).

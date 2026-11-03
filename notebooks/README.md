@@ -16,6 +16,8 @@ Choose a provider and execute its three notebooks in order:
 
 Stages 01 and 03 call external APIs. Stage 02 operates on local tables. Claude's
 full-text stage uses Gemini embeddings. Configure `.env` before starting API runs.
+For a new review, follow [Use your own data](../docs/using-your-data.md). Results
+are separated by provider under the active data directory.
 
 ## Analysis of recorded results
 
@@ -37,6 +39,6 @@ General methodological descriptions live in the [workflow guide](../docs/workflo
 The [article comparison](../docs/article-comparison.md) distinguishes verified
 agreement from limitations of the saved artifacts.
 
-`_shared.py` contains only local path, configuration, and cache utilities.
+`_shared.py` contains local configuration, input, matching, and cache utilities.
 Do not execute it as a pipeline. New runs can overwrite tables; see the workflow
 guide for a separate results directory.

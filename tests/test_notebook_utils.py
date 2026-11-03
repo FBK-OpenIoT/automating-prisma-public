@@ -8,7 +8,7 @@ from langchain_community.vectorstores import FAISS
 
 from _shared import (
     project_root, require_environment, cache_fingerprint,
-    load_cached_index, save_cached_index,
+    load_cached_index, save_cached_index, align_full_text_results,
 )
 
 
@@ -60,6 +60,33 @@ def test_cache_round_trip_and_invalidation(tmp_path):
 def test_empty_pdf_input(tmp_path):
     with pytest.raises(FileNotFoundError, match="full-text PDFs"):
         cache_fingerprint(str(tmp_path), "test", 2000, 400)
+
+
+def test_manifest_alignment_is_independent_of_row_order(tmp_path):
+    import pandas as pd
+
+    metadata = pd.DataFrame([
+        dict(DOI="10.0000/a", Title="Study A", Authors="A", Year=2026, Include="maybe"),
+        dict(DOI="10.0000/b", Title="Study B", Authors="B", Year=2026, Include="maybe"),
+    ])
+    (tmp_path / "manifest.csv").write_text("Filename,DOI\nb.pdf,10.0000/b\na.pdf,10.0000/a\n", encoding="utf-8")
+    extracted = pd.DataFrame({"PDF Filename": ["b.pdf", "a.pdf"], "Title": ["arbitrary", "filenames"], "Data Source": ["Dataset B", "Dataset A"]})
+    result = align_full_text_results(metadata, extracted, str(tmp_path))
+    assert dict(zip(result["DOI"], result["Data Source"])) == {"10.0000/a": "Dataset A", "10.0000/b": "Dataset B"}
+    assert list(result.columns) == ["DOI", "Title", "Authors", "Year", "Data Source"]
+
+
+def test_title_alignment_rejects_unknown_or_duplicate_studies(tmp_path):
+    import pandas as pd
+
+    metadata = pd.DataFrame([dict(DOI="a", Title="Known study", Authors="A", Year=2026)])
+    extracted = pd.DataFrame({"Title": ["Other study"], "Data Source": ["Dataset"]})
+    with pytest.raises(ValueError, match="do not match"):
+        align_full_text_results(metadata, extracted, str(tmp_path))
+    metadata = pd.concat([metadata, metadata], ignore_index=True)
+    extracted["Title"] = "Known study"
+    with pytest.raises(ValueError, match="Ambiguous"):
+        align_full_text_results(metadata, extracted, str(tmp_path))
 
 
 @pytest.mark.parametrize("name", ["gemini/03_full_text_eligibility", "claude/03_full_text_eligibility", "analysis/full_text_sensitivity"])

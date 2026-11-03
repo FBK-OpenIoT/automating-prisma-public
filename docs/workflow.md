@@ -2,83 +2,79 @@
 
 ## Strategy
 
-The validation workflow has three methodological steps:
+1. Execute declared, database-specific searches and export bibliographic metadata.
+2. Normalize and deduplicate records, then screen titles and abstracts and extract
+   named datasets where the abstract supports it.
+3. Obtain full texts for retained papers without a dataset, extract and harmonize
+   dataset names with RAG, and combine the review tables.
 
-1. Structured search: execute database-specific queries to identify papers that
-   refer to datasets in the target domain, then normalize and deduplicate exports.
-2. Title and abstract screening: apply declared inclusion and exclusion criteria
-   with Gemini or Claude and extract named datasets when the abstract supports it.
-3. Full-text eligibility: use RAG to extract datasets for retained papers without
-   an associated dataset, then combine the results into the final review table.
+The AQA reference notebook replicates identification only. Its broader search is
+distinct from the dataset-oriented review query. Complementary full-text
+sensitivity is a separate experiment. See the [article comparison](article-comparison.md).
 
-The main experiment uses a dataset-oriented query, not the broader reference
-query. The reference notebook replicates only identification. The complementary
-full-text sensitivity experiment is separate from the primary eligibility run.
-See [article comparison](article-comparison.md) for verified results and caveats.
+## Execution and paths
 
-## Inputs and results
+Choose `notebooks/gemini/` or `notebooks/claude/` and execute 01, 02, then 03.
+The stages write `screening_evaluated.csv`, then `abstract_review.csv` and
+`full_text_candidates.csv`, and finally `final_review.csv`. Tables live below
+`results/gemini/` or `results/claude/` in the active data directory.
 
-`data/metadata/` contains the IEEE, Scopus, and Web of Science exports.
-`data/study_datasets.json` maps reference DOIs to datasets. `data/results/`
-contains recorded screening, review, annotation, cost, and sensitivity tables.
+The reference notebook writes `results/reference/identified_records.csv`.
+Annotation agreement reads `annotations/annotator_*.xlsx`. Model comparison reads
+both provider folders. Stability analysis reads the five saved Gemini run files;
+it does not generate five new runs. Full-text sensitivity makes new Gemini calls.
 
-By default, reruns write to `data/results/`, replacing tables or appending cost
-rows. To preserve recorded results, copy that directory to `runs/my-experiment`
-and set `PRISMA_RESULTS_DIR=runs/my-experiment` in `.env` or the shell. The copy
-supplies annotation and historical files needed by analysis notebooks. All
-notebooks honor this setting. Restart the kernel after changing configuration.
-
-## Execution order
-
-Run Gemini 01, 02, then 03, or Claude 01, 02, then 03. Screening writes
-`df_evaluated_validation.csv`; evaluation produces `review.csv` and
-`df_evaluated_validation_abstract.csv`; full-text processing combines them into
-`review_final.csv`. Claude files have the `CLAUDE_` prefix. Repeated Gemini
-experiments use the editable `RUN_ID` cell.
-
-The main notebooks live in `notebooks/gemini/` and `notebooks/claude/`, with
-matching names: `01_identification_screening`, `02_screening_evaluation`, and
-`03_full_text_eligibility`. Claude result files retain their historical prefix.
-
-`notebooks/reference/reproduce_identification.ipynb` reconstructs the reference
-search corpus. `notebooks/analysis/run_stability_and_costs.ipynb` reads five saved
-runs; `full_text_sensitivity.ipynb` executes a separate API experiment. Model
-comparison and annotation agreement are also in `notebooks/analysis/`.
+See the [data guide](../data/README.md) for the full layout and
+[your own data](using-your-data.md) for an independent review.
 
 ## Configuration
 
-Copy `.env.example` to `.env`. Shell variables take precedence. Analysis notebooks
-that read saved results need no keys; full-text sensitivity needs Gemini access.
-Model IDs must be supported by your account. Historical IDs and
-token counts appear in cost CSVs. Notebook cost formulas are study-era estimates,
-not current provider quotes. Check rates before budgeting a run.
+Copy `.env.example` to `.env` if needed. Shell variables take precedence; restart
+the kernel after changes. Use model IDs supported by your account.
 
-Obtain full texts through your own permitted access. Use `data/full_text_pdf/`
-for Gemini, `data/CLAUDE_full_text_pdf/` for Claude, and `data/full_text_pdf_rag/`
-for sensitivity. Keep filenames compatible with notebook title matching.
-Missing or empty PDF directories produce an explanatory error.
+| Setting | Default |
+| --- | --- |
+| `PRISMA_DATA_DIR` | `data` in this checkout |
+| `PRISMA_RESULTS_DIR` | `<data directory>/results` |
+| `PRISMA_PDF_DIR` | `<data directory>/full_text/<provider>`; sensitivity uses `sensitivity` |
+| `PRISMA_CASE_STUDY_FILTERS` | True for bundled `data/`, false for another data directory |
 
-## Local caches
+Paths may be absolute or relative to the checkout root. The results setting is
+the parent of the model folders. To inspect copied historical runs, copy the
+whole `data/results/` tree to your desired results directory; annotation and
+reference inputs remain in the active data directory. For new reviews no copy
+of study results is needed.
 
-`.cache/prisma/{gemini,claude,sensitivity}/` holds JSON document stores and FAISS
-vectors. These contain full-text fragments and must remain local. No pickle is
-read or written. PDF contents, filenames, embedding model, and chunk settings
-control reuse. Changes rebuild the cache. To force rebuilding, close the notebook
-and delete only its provider cache folder. Concurrent writes to one cache are
-not supported.
+Analysis of saved results needs no credentials. Full-text sensitivity needs
+Gemini access. Claude full-text extraction also uses Gemini embeddings.
 
-## Reproducibility
+## Full-text association
 
-`uv.lock` fixes Python dependency resolution. Retained outputs predate these
-source changes. Hosted model revisions, retrieval, API failures, rate limits,
-and human decisions can affect new results. Validate decisions and extracted
-names before using them in a review.
+PDFs are acquired manually through permitted access, not downloaded by notebooks.
+Use a local `manifest.csv` with `Filename,DOI` to map PDF files to candidate
+records independently of sort order. Without a manifest, the notebooks accept
+only unambiguous normalized title matches. Unknown or ambiguous matches stop
+with an error. Missing extraction results are reported for manual resolution and
+are not assigned another study's metadata.
+For the standard bundled full-text folders, curated mappings in
+`data/reference/pdf_manifests/` provide the association when no local manifest
+exists. A manifest in the PDF folder always takes precedence.
 
-## Notebook text
+## Caches and reproducibility
 
-Notebook Markdown identifies the next operation or explains an observed result.
-Numerical notes such as the comparison of 59 identified papers with 50 in the
-reference study remain next to their outputs. These are historical observations,
-not assertions about a future run. General strategy and usage belong here and
-in the notebook guide. Scientific prompts and their criteria remain beside the
-code that executes them.
+`.cache/prisma/{gemini,claude,sensitivity}/` contains local JSON document stores
+and FAISS vectors. These include article fragments and must remain private.
+No pickle is read or written. PDF contents, filenames, embedding model, and
+chunk settings determine cache reuse. Close the notebook before removing its
+provider cache to force a rebuild; concurrent writes to one cache are unsupported.
+
+`uv.lock` fixes dependency resolution. Saved outputs are historical snapshots and
+are not refreshed by source edits. Warm-cache runs do not reproduce cold-index
+timings. Hosted model revisions, API failures, retrieval, and human decisions may
+change new results. Notebook cost formulas are historical estimates; check rates
+before budgeting new calls.
+
+Notebook Markdown identifies operations and records observations. Numeric notes
+such as 59 identified papers versus 50 in the reference remain beside the
+historical output. General strategy belongs here; executable prompts remain
+beside the code. Changing the topic requires adapting those prompts and mappings.

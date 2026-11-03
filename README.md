@@ -48,6 +48,11 @@ Start Jupyter anywhere inside this checkout. The notebooks locate their shared
 local helper file automatically. LLM runs send text to external providers and may incur
 charges. See [configuration](docs/workflow.md) before running them.
 
+To run a new review, follow [Use your own data](docs/using-your-data.md): define
+the protocol, export search metadata, screen records, obtain permitted full texts,
+and map PDFs to candidate DOIs. Separate data and result folders preserve the AQA
+case study. Domain-specific prompts and name mappings must be adapted explicitly.
+
 ## Data and copyright
 
 Exports, abstracts, annotations, result tables, and notebook outputs are retained.
@@ -61,6 +66,7 @@ See [data sources and rights](docs/data-sources.md).
 
 - [Notebook guide](notebooks/README.md)
 - [Workflow and configuration](docs/workflow.md)
+- [Use your own metadata and papers](docs/using-your-data.md)
 - [Data sources and rights](docs/data-sources.md)
 - [Comparison with the reference article](docs/article-comparison.md)
 - [Data directory guide](data/README.md)
